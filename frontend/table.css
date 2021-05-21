@@ -1,0 +1,24 @@
+.strava-widget {
+    float: left;
+    width: 100%;
+ }
+    .strava-stats {
+       border-top: 1px solid #ccc;
+       border-right: 1px solid #ccc;
+    }
+       .strava-stats .caption {
+          background: #dbdada;
+          font-weight: bold;
+       }
+          .strava-stats th,
+          .strava-stats td {
+             padding: 15px;
+             border-left: 1px solid #ccc;
+             border-bottom: 1px solid #ccc;
+             width: calc(100% / 6)
+          }
+          .strava-stats .heading {
+             background: #dbdadac7;
+             font-weight: bold;
+             text-align: center;
+          }

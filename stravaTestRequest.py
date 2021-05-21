@@ -3,7 +3,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 auth_url = "https://www.strava.com/oauth/token"
-activites_url = "https://www.strava.com/api/v3/athlete/activities"
+activites_url = "https://www.strava.com/api/v3/athlete"
 
 payload = {
     'client_id': "66386",
@@ -22,5 +22,6 @@ header = {'Authorization': 'Bearer ' + access_token}
 param = {'per_page': 200, 'page': 1}
 my_dataset = requests.get(activites_url, headers=header, params=param).json()
 
+#Distance is in metres 
 print(my_dataset[0]["name"])
-print(my_dataset[0]["map"]["summary_polyline"])
+print(my_dataset[0])
