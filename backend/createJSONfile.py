@@ -48,6 +48,25 @@ all_run_totals = strava_json['all_run_totals']
 all_run_totals['distance'] = str((all_run_totals['distance'] / 1000)) + 'km';
 print(all_run_totals['distance'])
 
-HTML_file = open('frontend/table.html', 'r')
-s = HTML_file.read().format(count=all_run_totals['count'], total=all_run_totals['distance'])
-print(s)
+html_string = """
+    <div class="strava-widget">
+        <table class="strava-stats">
+        <tr>
+            <th class="caption" colspan="6">Strava Lifetime Stats</th>
+        </tr>
+        <tr>
+            <td class="heading" colspan="2"></td>
+        </tr>
+        <tr>
+            <td>Runs</td> 
+            <td><strong>"""+ str(all_run_totals['count']) + """</strong></td>
+        </tr>
+        <tr>
+            <td>Distance</td> 
+            <td><strong>"""+ str(all_run_totals['distance']) +"""</strong></td>
+        </tr>
+        </table>
+    </div>
+"""
+with open("frontend/table.html", "w") as file:
+    file.write(html_string)
